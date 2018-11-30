@@ -8,6 +8,7 @@ program
     .version('0.0.1')
     .command('ethereum', 'Ethereum tool')
     .command('ubuntu', 'Ubuntu tool')
+    .command('nodeframework', 'Create Node project, folder structure and packages')
     .parse(process.argv)
 
 if (process.argv.length <= 2) {
