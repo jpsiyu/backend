@@ -7,8 +7,8 @@ const program = require('commander')
 program
     .version('0.0.1')
     .command('ethereum', 'Ethereum tool')
-    .command('ubuntu', 'Ubuntu tool')
-    .command('nodeframework', 'Create Node project, folder structure and packages')
+    .command('centos', 'Connect to centos server')
+    .command('webapp', 'Web app framework')
     .parse(process.argv)
 
 if (process.argv.length <= 2) {
