@@ -7,7 +7,7 @@ const program = require('commander')
 program
     .version('0.0.1')
     .command('ethereum', 'Ethereum tool')
-    .command('centos', 'Connect to centos server')
+    .command('server', 'Connect to server')
     .command('webapp', 'Web app framework')
     .parse(process.argv)
 
