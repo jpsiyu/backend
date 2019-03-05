@@ -33,19 +33,18 @@ program
     })
 
 program
-    .command('docker-cc')
-    .description('Clear all containers')
+    .command('dockercc')
+    .description('Clear all docker containers')
     .action((cmd, options) => {
         const c = 'docker rm -f $(docker ps -aq)'
         execProcess(c)
     })
 
 program
-    .command('docker-cnone')
-    .description('Clear image with none repository or tag')
+    .command('dockerci')
+    .description('Clear docker dangling images')
     .action((cmd, options) => {
-        const c = 'docker image prune'
-        execProcess(c)
+        spawnProcess('docker', ['image', ['prune']])
     })
 
 program.on('command:*', function () {
