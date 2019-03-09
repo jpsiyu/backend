@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander')
-const { spawnProcess, execProcess } = require('./lib/process.js')
+const { spawnProcess, spawnShell, execProcess } = require('./lib/process.js')
 
 program
     .version('0.0.2')
@@ -45,6 +45,13 @@ program
     .description('Clear docker dangling images')
     .action((cmd, options) => {
         spawnProcess('docker', ['image', ['prune']])
+    })
+
+program
+    .command('dockerls')
+    .description('Show name and tag of docker image')
+    .action((cmd, options) => {
+        spawnShell('docker image ls | awk \'{print $1":"$2}\'')
     })
 
 program.on('command:*', function () {
