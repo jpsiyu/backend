@@ -33,6 +33,18 @@ program
     })
 
 program
+    .command('webapp-go')
+    .description('Web app framework go version')
+    .action((cmd, options) => {
+        const url = 'https://github.com/jpsiyu/webapp-go.git'
+        const rmGitReposity = () => {
+            console.log('rm git reposity')
+            execProcess('rm -rf .git')
+        }
+        spawnProcess('git', ['clone', url, '.'], rmGitReposity)
+    })
+
+program
     .command('dockercc')
     .description('Clear all docker containers')
     .action((cmd, options) => {
